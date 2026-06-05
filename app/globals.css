@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-periafter-creme: #F5EFE6;
+  --color-periafter-anthracite: #1F2A2E;
+  --color-periafter-vert: #5C7C5A;
+  --color-periafter-terracotta: #B8765F;
+  --color-periafter-or: #C9A96E;
+  --color-meta-gray: #6B6B6B;
+  --font-serif: 'Tiempos Text', 'Source Serif 4', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-periafter-anthracite bg-periafter-creme antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif font-semibold;
+  }
+}
+
+@layer utilities {
+  .prose-periafter {
+    @apply font-serif text-lg leading-relaxed;
+  }
+  .prose-periafter h1 { @apply text-4xl lg:text-5xl leading-tight; }
+  .prose-periafter h2 { @apply text-2xl lg:text-3xl mt-10 mb-4; }
+  .prose-periafter h3 { @apply text-xl mt-8 mb-3 font-medium; }
+  .prose-periafter p { @apply mb-5; }
+  .prose-periafter ul { @apply list-disc pl-6 mb-5 space-y-2; }
+  .prose-periafter li { @apply leading-relaxed; }
+  .prose-periafter strong { @apply font-semibold; }
+  .prose-periafter a { @apply text-periafter-vert underline underline-offset-2 hover:text-periafter-terracotta; }
+  .prose-periafter blockquote {
+    @apply border-l-4 border-periafter-or pl-6 italic text-meta-gray my-8;
+  }
+}
